@@ -8,30 +8,50 @@ import restaurants from "../../restaurants";
 const HomePage = () => {
   return (
     <>
-      <div className="container-fluid">
-        {/* Implement Task 1 - Displaying cuisine names and images */}
-        {/* Example given below */}
-         <h4>Try New Cuisines</h4>
-         {cuisines.map(cuisine=> (
-              <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={cuisine.image} />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
-                </Card.Text>
-                
-              </Card.Body>
-            </Card>
-         ))}
-      </div>
-      <div className="container-fluid">
-        {/* Implement Task 1 - Displaying category names and images */}
-      </div>
-      <div className="container-fluid">
+      {/* Implement Task 1 - Displaying cuisine names and images */}
+      {/* Example given below */}
+      <h4>Try New Cuisines</h4>
+      <Container fluid>
+        <Row>
+          {cuisines.map((cuisine) => (
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <ItemCard 
+                itemName="cuisine"
+                item={cuisine}
+              ></ItemCard>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      <h4>Get inspiration for your order</h4>
+      <Container fluid>
+        <Row>
+          {categories.map(category => (
+            <Col xs={12} sm={6} md={4} lg={3}>
+               <ItemCard 
+            itemName="category"
+            item={category}
+            ></ItemCard>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      
+      <h4>Available restaurants</h4>
         {/* Implement Task 1 - Displaying restaurant names and images */}
-      </div>
+        <Container fluid>
+        <Row>
+          {restaurants.map(restaurants => (
+            <Col xs={12} sm={6} md={4} lg={3}>
+               <ItemCard 
+            itemName="restaurant"
+            item={restaurants}
+            ></ItemCard>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
   );
 };

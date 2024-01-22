@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.container-fluid {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly with space between them */
+}
